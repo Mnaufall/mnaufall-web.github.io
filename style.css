@@ -20,9 +20,8 @@ body {
 
 /* Background foto full screen */
 .bg-image {
-    background: 
-      url("foto5.jpg") no-repeat center center,
-    background-size: contain, contain, contain; /* semua contain */
+    url("assets/foto5.jpg") no-repeat center center ;
+    background-size: cover; /* semua contain */
     background-color: #000; /* kalau ada sisa ruang */
     min-height: 100vh;
   
@@ -287,4 +286,5 @@ button:hover {
   
 
   
+
 
