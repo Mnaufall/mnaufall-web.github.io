@@ -22,8 +22,6 @@ body {
 .bg-image {
     background: 
       url("foto5.jpg") no-repeat center center,
-      url("foto8.jpg") no-repeat left center,
-      url("foto20.jpg") no-repeat right center;
     background-size: contain, contain, contain; /* semua contain */
     background-color: #000; /* kalau ada sisa ruang */
     min-height: 100vh;
@@ -289,3 +287,4 @@ button:hover {
   
 
   
+
