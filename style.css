@@ -1,290 +1,253 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: url(assets/foto8.jpg) no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-  }
-  
-  .container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    max-width: 700px;
-  }
+    overflow-x: hidden;
+    padding: 10px;
+}
 
-/* Background foto full screen */
-.bg-image {
-    url("assets/foto5.jpg") no-repeat center center ;
-    background-size: cover; /* semua contain */
-    background-color: #000; /* kalau ada sisa ruang */
-    min-height: 100vh;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  
-  /* Overlay biar teks jelas */
-  .overlay {
-    position: absolute;
-    top: 0; left: 0;
+/* Container */
+.container {
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35); /* hitam transparan */
-    z-index: 0;
-  }
-  
-  /* Container konten tetap di tengah */
-  .container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
+    max-width: 450px;
+    background-color: rgba(255, 240, 245, 0.8); /* semi transparan */
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    max-width: 600px;
-  }
-  
-  /* background halaman kedua 
-  /* Background halaman kedua */
-.bg-image-2 {
-    background: url("assets/Kimi\ No\ Na\ Wa.jpeg") no-repeat center center;
-    background-size: cover;  /* foto penuh, rapi */
-    min-height: 100vh;
-  
+    padding: 20px;
+    margin: 0 10px; /* jarak kiri dan kanan */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
-    position: relative;
-  }
-  
-  /* Overlay biar teks jelas */
-  .bg-image-2 .overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35); /* transparan gelap */
-    z-index: 0;
-  }
-  
-  /* Container */
-  .bg-image-2 .container {
-    position: relative;
-    z-index: 1;
+    align-items: center;
     text-align: center;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    max-width: 600px;
-  }
-  
-  h1 {
-    color: #e63946;
-    font-size: 2.3rem;
-    margin-bottom: 15px;
-  }
-  
-  p {
-    color: #333;
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 30px;
-    background: #ff6b6b;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  button:hover {
-    background: #ff4757;
-    transform: scale(1.05);
-  }
-  
-/* Halaman Galeri */
-.gallery-container {
-  background: #fff;
-  min-height: 100vh;
-  padding: 40px 20px;
-  text-align: center;
+    gap: 15px;
 }
 
-.gallery-container h1, 
-.gallery-container h2 {
-  margin-bottom: 25px;
-  color: #333;
+h1 {
+    color: #ff3366;
+    font-size: 1.5em; /* sebelumnya 2em */
 }
+
+p {
+    font-size: 20px;
+}
+
+button {
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6699;
+}
+
+/* Album Kenangan */
+.album {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.album img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+/* Heart animation */
+.heart {
+    position: fixed;
+    bottom: 0;
+    font-size: 24px;
+    color: red;
+    animation: floatHeart 4s ease-out forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes floatHeart {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-400px) scale(1.5); opacity: 0; }
+}
+
+/* Scrollable paragraph khusus Permintaan Maaf Part 2 */
+.scroll-paragraph {
+    max-height: 300px; /* tinggi maksimum container paragraf */
+    overflow-y: auto;  /* scroll vertical jika konten panjang */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.6); /* semi transparan supaya mudah dibaca */
+    border-radius: 10px;
+    text-align: justify;
+    font-size: 1em;
+}
+
+/* Optional: scroll bar style */
+.scroll-paragraph::-webkit-scrollbar {
+    width: 5px;
+}
+
+.scroll-paragraph::-webkit-scrollbar-thumb {
+    background-color: #ff3366;
+    border-radius: 3px;
+}
+
+/* Music Player */
+.music-player {
+    margin: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Kecilkan ukuran player */
+.music-player audio {
+    width: 80%;  /* sebelumnya otomatis penuh, sekarang lebih kecil */
+    max-width: 300px; /* batas maksimal supaya tidak terlalu besar di tablet/laptop */
+    height: 30px; /* ketinggian player lebih kecil */
+}
+
 
 /* Gallery Foto */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* min 220px */
-    gap: 15px;
-    margin: 20px 0;
-  }
-  
-  .gallery img {
-    width: 100%;
-    height: 220px; /* seragam */
-    object-fit: cover; /* isi penuh tanpa merusak proporsi */
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  }
+    grid-template-columns: repeat(2, 1fr); /* 2 foto per baris */
+    gap: 12px; /* dikit lebih rapat supaya foto lebih besar */
+    margin-bottom: 20px;
+}
 
-/* Lightbox popup */
-#lightbox {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  #lightbox img {
-    max-width: 90%;
-    max-height: 90%;
+.gallery img {
+    width: 100%;
+    height: 180px; /* lebih besar dari sebelumnya */
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    animation: fadeIn 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  
+}
 
 /* Video Gallery */
 .video-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* tiap video 300px */
-    gap: 20px;
-    justify-items: center;
-    margin-top: 30px;
-  }
-  
-  .video-gallery video {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.video-gallery video {
     width: 100%;
-    max-width: 400px;
-    height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  
-  /* Biar video terakhir (ke-5) di tengah */
-  .video-gallery video:last-child {
-    grid-column: 1 / -1;  /* ambil full baris */
-    justify-self: center; /* taruh di tengah */
-    max-width: 500px;     /* agak lebih besar biar stand out */
-  }
-
-/* Tombol */
-button {
-  margin-top: 40px;
-  padding: 12px 25px;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  background-color: pink;
-  color: #333;
-  cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
-button:hover {
-  background-color: hotpink;
-  color: white;
 }
 
-  
-  /* Video background */
-  .video-bg {
+/* Lightbox */
+.lightbox {
+    display: none; /* awalnya tersembunyi */
     position: fixed;
-    top: 0; left: 0;
+    z-index: 1000;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* biar video ngepas layar */
-    z-index: -2;
-  }
-  
-  .video-gallery video:last-child {
-    grid-column: 2 / span 1; /* geser ke tengah kolom */
-  }
-  
-  
-  /* Overlay biar teks kebaca */
-  .overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.3);
-    z-index: -1;
-  }
-  
-  /* Container isi */
-  .bg-video .container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 600px;
-    margin: auto;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  }
-  
-  /* Responsive untuk HP */
-@media (max-width: 768px) {
-    .gallery {
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* lebih kecil */
-      gap: 10px;
-    }
-  
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Background Part 1 */
+#bg-part1 {
+    background: url('assets/foto15.JPG') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Background Part 2 */
+#bg-part2 {
+    background: url('assets/foto20.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#bg-part3 {
+    background: url('assets/foto19.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#bg-part4 {
+    background: url('assets/foto11.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+/* Body umum */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+
+
+/* Responsive untuk HP */
+@media (max-width: 450px) {
     .gallery img {
-      height: 140px; /* lebih kecil biar muat */
+        height: 160px;
     }
-  
+
     .video-gallery {
-      grid-template-columns: 1fr; /* 1 kolom aja di HP */
+        grid-template-columns: 1fr; /* video full width di HP */
     }
-  
+
     .video-gallery video {
-      max-width: 100%;
+        height: auto;
     }
-  }
-  
-
-  
+}
 
 
+
+/* Responsive HP */
+@media (max-width: 450px) {
+    .album img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
