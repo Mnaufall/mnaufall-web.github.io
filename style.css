@@ -8,7 +8,7 @@
 /* Body */
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: url(assets/foto8.jpg) no-repeat center center fixed;
+    background: url(foto8.jpg) no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -251,3 +251,4 @@ body {
         font-size: 1em;
     }
 }
+
