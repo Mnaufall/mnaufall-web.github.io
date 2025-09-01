@@ -185,23 +185,23 @@ button:hover {
 
 /* Background Part 1 */
 #bg-part1 {
-    background: url('assets/foto15.JPG') no-repeat center center fixed;
+    background: url('foto15.JPG') no-repeat center center fixed;
     background-size: cover;
 }
 
 /* Background Part 2 */
 #bg-part2 {
-    background: url('assets/foto20.jpg') no-repeat center center fixed;
+    background: url('foto20.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
 #bg-part3 {
-    background: url('assets/foto19.jpg') no-repeat center center fixed;
+    background: url('foto19.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
 #bg-part4 {
-    background: url('assets/foto11.jpg') no-repeat center center fixed;
+    background: url('foto11.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -251,4 +251,5 @@ body {
         font-size: 1em;
     }
 }
+
 
