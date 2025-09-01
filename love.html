@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Interaktif ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="bg-part2">
+    <div class="container">
+        <h1>SESI CINTA</h1>
+        <p>Yang ngeklik tombol dibawah dapet akuu😘</p>
+        <button id="loveButton">Coba di Klik</button>
+        <p>Okee kalau udah bisa lanjut</p>
+        <a href="maaf2.html"><button>Lanjut</button></a>
+    </div>
+
+    <script>
+        const loveButton = document.getElementById('loveButton');
+        loveButton.addEventListener('click', () => {
+            for(let i=0; i<30; i++){
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 90 + 'vw';
+                heart.style.animationDuration = (Math.random()*2 + 2) + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 4000);
+            }
+        });
+    </script>
+    >
+</body>
+</html>
